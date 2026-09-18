@@ -20,7 +20,7 @@ Kali Linux and the vulnerable target VM were started and configured on the same 
 
 **Step 1 Screenshot**
 
-(images/metasploit 1.jpeg)
+![Metasploit Screenshot](images/metasploit%201.jpeg)
 
 ### Step 2: Find the Target IP
 
