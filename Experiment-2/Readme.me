@@ -1,121 +1,103 @@
+COM 512 Experiment 2: Simulated Ethical Hacking with Metasploit
 
-## EXPERIMENT 2: SIMULATED ETHICAL HACKING WITH METASPLOIT
+Aim
+To perform a safe and controlled exploitation of an intentionally vulnerable virtual machine using the Metasploit Framework and understand the basic ethical hacking process.
 
-### Aim
+Requirements
+Kali Linux
+Metasploitable 2 / intentionally vulnerable VM
+VirtualBox or VMware
+Metasploit Framework
+Isolated Host-Only virtual network
+Procedure
+Step 1: Configure the Lab Network
 
-To perform a safe and controlled exploitation of an intentionally vulnerable virtual machine using the **Metasploit Framework** and understand the basic ethical hacking process.
+Kali Linux and the vulnerable target VM were started and configured on the same Host-Only/isolated network. The target VM was kept isolated from the public Internet.
 
-### Requirements
+Step 1 Screenshot 
 
-* Kali Linux
-* Metasploitable 2 / intentionally vulnerable VM
-* VirtualBox or VMware
-* Metasploit Framework
-* Isolated Host-Only virtual network
+Step 2: Find the Target IP
 
-### Theory
+The IP address of the target VM was identified using the appropriate network command.
 
-Metasploit is a penetration-testing framework used to identify and validate vulnerabilities in authorized systems. The basic workflow is:
+Target IP: ________________________
 
-**Reconnaissance → Vulnerability Identification → Exploit Selection → Configuration → Exploitation → Verification → Reporting**
+Step 2 Screenshot
 
----
+Step 3: Check Connectivity
 
-## Procedure
+Connectivity between Kali Linux and the target VM was verified using a ping command.
 
-### Step 1: Configure the Lab Network
+Connectivity: Successful / Unsuccessful
 
-1. Start **Kali Linux** and the vulnerable target VM.
-2. Configure both VMs on the same **Host-Only/isolated network**.
-3. Ensure the target is not exposed to the public Internet.
+Step 3 Screenshot
 
-### Step 2: Find the Target IP
+Step 4: Perform Reconnaissance
 
-1. Log in to the target VM.
-2. Find its IP address using the appropriate network command.
-3. Record the target IP.
+Open ports and services running on the target VM were identified. Relevant service and version information was recorded.
 
-**Target IP:** `________________________`
+Port	Service	Version/Information
 
-### Step 3: Check Connectivity
+	
+	
 
-From Kali Linux, verify that the target VM is reachable.
 
-Record the result:
+	
+	
 
-**Connectivity:** `Successful / Unsuccessful`
 
-### Step 4: Perform Reconnaissance
+	
+	
 
-1. Identify open ports on the target.
-2. Identify the services running on those ports.
-3. Record relevant service/version information.
 
-| Port | Service | Version/Information |
-| ---- | ------- | ------------------- |
-|      |         |                     |
-|      |         |                     |
-|      |         |                     |
+Step 4 Screenshot
 
-### Step 5: Start Metasploit
+Step 5: Start Metasploit
 
-1. Open a terminal in Kali Linux.
-2. Start the Metasploit Framework.
-3. Wait for the Metasploit console to load.
+The Metasploit Framework was started from the Kali Linux terminal. The Metasploit console was allowed to load successfully.
 
-### Step 6: Search for a Vulnerability
+Step 5 Screenshot
 
-1. Use the reconnaissance results to identify a potentially vulnerable service.
-2. Search the Metasploit module database for a matching exploit.
-3. Select an exploit specifically applicable to the intentionally vulnerable lab VM.
+Step 6: Search for a Vulnerability
 
-### Step 7: Select and Configure the Exploit
+The reconnaissance results were used to identify a potentially vulnerable service. The Metasploit module database was searched for an exploit applicable to the intentionally vulnerable laboratory VM.
 
-1. Select the required exploit module.
-2. Review its options.
-3. Configure the target address.
-4. Configure the required target service/port.
-5. Select an appropriate payload if required.
-6. Verify all settings before execution.
+Step 6 Screenshot
 
-### Step 8: Run the Exploit
+Step 7: Select and Configure the Exploit
 
-1. Execute the selected exploit against the **isolated laboratory target**.
-2. Observe the Metasploit console output.
-3. Check whether a session is successfully established.
+The required exploit module was selected and its available options were reviewed. The target address, service/port and required payload were configured. All settings were verified before execution.
 
-### Step 9: Verify the Result
+Step 7 Screenshot
 
-If a session is established:
+Step 8: Run the Exploit
 
-1. Confirm that the session belongs to the intended target VM.
-2. Collect basic system information for the lab report.
-3. Do not delete files, alter configurations, or perform destructive actions.
+The selected exploit was executed against the isolated laboratory target. The Metasploit console output was observed to determine whether a session was successfully established.
 
-### Step 10: Close the Session
+Step 8 Screenshot
 
-1. Exit the established session.
-2. Stop Metasploit.
-3. Shut down the virtual machines when the experiment is complete.
+Step 9: Verify the Result
 
----
+If a session was established, it was verified to ensure that it belonged to the intended target VM. Basic system information was collected for documentation. No files were deleted and no destructive changes were made.
 
-## Observation Table
+Step 9 Screenshot
 
-| Parameter          | Observation      |
-| ------------------ | ---------------- |
-| Attacker           | Kali Linux       |
-| Target             | Metasploitable 2 |
-| Target IP          | __________       |
-| Vulnerable Service | __________       |
-| Vulnerability      | __________       |
-| Metasploit Module  | __________       |
-| Payload            | __________       |
-| Session Obtained   | Yes / No         |
+Step 10: Close the Session
 
----
+The established session was exited after verification. Metasploit was stopped and the virtual machines were shut down after completion of the experiment.
 
-## Result
+Step 10 Screenshot
 
-The vulnerable laboratory VM was tested using the Metasploit Framework in an isolated environment. The experiment demonstrated the basic process of reconnaissance, vulnerability identification, exploit configuration, controlled exploitation, session verification, and reporting.
+Observation Table
+Parameter	Observation
+Attacker	Kali Linux
+Target	Metasploitable 2
+Target IP	__________
+Vulnerable Service	__________
+Vulnerability	__________
+Metasploit Module	__________
+Payload	__________
+Session Obtained	Yes / No
+Result
 
+The intentionally vulnerable laboratory VM was tested using the Metasploit Framework in an isolated environment. The experiment demonstrated the basic process of reconnaissance, vulnerability identification, exploit selection, configuration, controlled exploitation, session verification, and reporting.
