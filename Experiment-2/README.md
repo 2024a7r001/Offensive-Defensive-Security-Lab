@@ -30,6 +30,8 @@ The IP address of the target VM was identified using the appropriate network com
 
 **Step 2 Screenshot**
 
+![Metasploit Screenshot](images/metasploit%202.jpeg)
+
 ### Step 3: Check Connectivity
 
 Connectivity between Kali Linux and the target VM was verified using a ping command.
