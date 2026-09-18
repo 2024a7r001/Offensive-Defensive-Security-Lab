@@ -40,6 +40,8 @@ Connectivity between Kali Linux and the target VM was verified using a ping comm
 
 **Step 3 Screenshot**
 
+![Metasploit Screenshot](images/metasploit%203.jpeg)
+
 ### Step 4: Perform Reconnaissance
 
 Open ports and services running on the target VM were identified. Relevant service and version information was recorded.
@@ -52,11 +54,15 @@ Open ports and services running on the target VM were identified. Relevant servi
 
 **Step 4 Screenshot**
 
+![Metasploit Screenshot](images/metasploit%204.jpeg)
+
 ### Step 5: Start Metasploit
 
 The Metasploit Framework was started from the Kali Linux terminal. The Metasploit console was allowed to load successfully.
 
 **Step 5 Screenshot**
+
+![Metasploit Screenshot](images/metasploit%205.jpeg)
 
 ### Step 6: Search for a Vulnerability
 
@@ -64,11 +70,15 @@ The reconnaissance results were used to identify a potentially vulnerable servic
 
 **Step 6 Screenshot**
 
+![Metasploit Screenshot](images/metasploit%206.jpeg)
+
 ### Step 7: Select and Configure the Exploit
 
 The required exploit module was selected and its available options were reviewed. The target address, service/port and required payload were configured. All settings were verified before execution.
 
 **Step 7 Screenshot**
+
+![Metasploit Screenshot](images/metasploit%207.jpeg)
 
 ### Step 8: Run the Exploit
 
@@ -76,17 +86,19 @@ The selected exploit was executed against the **isolated laboratory target**. Th
 
 **Step 8 Screenshot**
 
+![Metasploit Screenshot](images/metasploit%208.jpeg)
+
 ### Step 9: Verify the Result
 
 If a session was established, it was verified to ensure that it belonged to the intended target VM. Basic system information was collected for documentation. No files were deleted and no destructive changes were made.
 
 **Step 9 Screenshot**
 
+![Metasploit Screenshot](images/metasploit%209.jpeg)
+
 ### Step 10: Close the Session
 
 The established session was exited after verification. Metasploit was stopped and the virtual machines were shut down after completion of the experiment.
-
-**Step 10 Screenshot**
 
 ## Observation Table
 
