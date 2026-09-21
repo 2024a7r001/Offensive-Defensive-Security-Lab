@@ -1,8 +1,6 @@
-Yes. Since you actually performed **`ifconfig → ping → nmap → Wireshark → curl → Wireshark scan`** using a Linux machine and **Metasploitable**, your README should follow those exact steps.
+COM 512 – Offensive and Defensive Security Lab
 
-# COM 512 – Offensive and Defensive Security Lab
-
-## Experiment: Basic Network Traffic Analysis with Wireshark
+ Experiment: Basic Network Traffic Analysis with Wireshark
 
 ### Aim
 
