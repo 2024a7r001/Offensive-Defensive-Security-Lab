@@ -28,6 +28,8 @@ Identify the IP address and network interface of the Linux machine.
 
 **Screenshot 1:** Output of `ifconfig`.
 
+![Step 5 - cURL](images/1.png)
+
 
 ## Step 2: Test Connectivity with Metasploitable
 
@@ -51,6 +53,7 @@ Ctrl + C
 
 **Screenshot 2:** Successful ping replies from Metasploitable.
 
+![Step 5 - cURL](images/2.png)
 
 ## Step 3: Perform a Basic Nmap Scan
 
@@ -70,6 +73,7 @@ Observe the open ports and services reported by Nmap.
 
 **Screenshot 3:** Nmap scan results.
 
+![Step 5 - cURL](images/3.png)
 
 ## Step 4: Start Wireshark and Capture Traffic
 
@@ -84,21 +88,11 @@ sudo wireshark
 3. Generate some traffic between Linux and Metasploitable.
 4. Observe the packets appearing in Wireshark.
 
-You can use filters such as:
-
-```text
-icmp
-```
-
-for ping traffic, or:
-
-```text
-tcp
-```
-
 for TCP traffic.
 
 **Screenshot 4:** Wireshark capturing packets.
+
+![Step 5 - cURL](images/4.png)
 
 
 ## Step 5: Generate HTTP Traffic Using cURL
@@ -147,6 +141,7 @@ to examine the contents of the lab HTTP communication.
 
 **Screenshot 6:** Wireshark packet/TCP stream analysis.
 
+![Step 5 - cURL](images/6.png)
 
 
 ## Result
