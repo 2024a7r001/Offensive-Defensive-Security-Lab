@@ -1,6 +1,6 @@
-COM 512 – Offensive and Defensive Security Lab
+# COM 512 – Offensive and Defensive Security Lab
 
- Experiment: Basic Network Traffic Analysis with Wireshark
+## Experiment: Basic Network Traffic Analysis with Wireshark
 
 ### Aim
 
