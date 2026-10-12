@@ -60,12 +60,6 @@ From Kali Linux, generate test traffic toward Metasploitable 2 within the isolat
 
 ![Test Traffic](images/6.jpeg)
 
-#### Step 7: Inspect Logs and Alerts
-
-Open the Snort alerts or logs section in pfSense. Examine the recorded events and verify the firewall filtering and IDS detection results.
-
-![Snort Alerts](images/7.jpeg)
-
 ### Conclusion
 
 pfSense firewall rules were configured to control network traffic, and Snort IDS was enabled to monitor suspicious activity in the virtual lab.
