@@ -22,7 +22,7 @@ Create three virtual machines in VirtualBox: Kali Linux, Metasploitable 2, and p
 **Screenshot:** Add your VirtualBox VM setup screenshot here.
 
 ```markdown
-![Screenshot 1](./images/1%20%28a%29.jpeg)
+![Screenshot 1](Experiment-4/images/1%20%28a%29.jpeg)
 ```
 
 #### Step 2: Install and Configure pfSense
