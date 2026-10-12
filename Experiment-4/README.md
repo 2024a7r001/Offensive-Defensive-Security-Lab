@@ -21,9 +21,8 @@ Create three virtual machines in VirtualBox: Kali Linux, Metasploitable 2, and p
 
 **Screenshot:** Add your VirtualBox VM setup screenshot here.
 
-```markdown
 ![Screenshot 1]\(images/1%20(a).jpeg)
-```
+
 
 #### Step 2: Install and Configure pfSense
 Install pfSense, assign the network interfaces, and configure the LAN IP address. Connect Kali Linux and Metasploitable 2 to the pfSense LAN network.
