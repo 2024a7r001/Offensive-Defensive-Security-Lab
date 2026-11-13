@@ -1,81 +1,60 @@
-Experiment 1: Scanning for Vulnerabilities using Nmap and Nessus
+# Experiment 1: Scanning for Vulnerabilities using Nmap and Nessus
 
-Objective
+## Objective
 
-To identify active hosts and open ports using Nmap and detect known vulnerabilities using Nessus.
+To use Nmap to identify open ports and Nessus to scan for known vulnerabilities on a test machine.
 
-Procedure
+## Procedure
 
-Step 1: Identify your attacker machine's IP
+### Step 1: Configure the Kali Linux and Metasploitable machines
 
-Kali Linux IP was identified using ifconfig. Connectivity with the target was verified using:
+Open the Kali Linux virtual machine as the attacker machine and the Metasploitable virtual machine as the target machine. Configure the network adapter of both virtual machines to Host-only Adapter so that they can communicate with each other within the isolated lab network.
 
+![Step 1 Screenshot](images/step_1.png)
+
+### Step 2: Check the IP address and verify connectivity
+
+Open a terminal in Kali Linux and use ifconfig to identify the IP address of the Kali machine. Then use the ping command with the Metasploitable IP address to verify that the two machines can communicate with each other.
+
+# Commands used :
+```bash
 ifconfig
-ping -c 4 192.168.64.6
-Kali IP: 192.168.64.5
-Target IP: 192.168.64.6
-Ping was successful with 0% packet loss.
+ping <Metasploitable-IP>
+```
 
-Step 1 Screenshot
+![Step 2 Screenshot](images/step_2.png)
 
-Step 2: Discover live hosts
+### Step 3: Perform a basic Nmap scan
 
-Live hosts were discovered using:
+Use Nmap to scan the Metasploitable machine and identify the open ports and services running on the target.
 
-nmap -sn 192.168.64.0/24
-Step 2 Screenshot
+# Commands used :
+```bash
+nmap <Metasploitable-IP>
+```
 
-Step 3: Scan open ports
+The scan output can be used to understand the exposed services on the target.
 
-Open ports of the target were identified using:
+![Step 3 Screenshot](images/step_3.png)
 
-nmap -sS 192.168.64.6
-Step 3 Screenshot
+### Step 4: Download Nessus
 
-Step 4: Service & OS Detection
+Download the Nessus vulnerability scanner required for performing vulnerability assessment of the target machine.
 
-Service versions and OS information were obtained using:
+![Step 4 Screenshot](images/step_4.jpeg)
 
-nmap -sV -O 192.168.64.6
-Step 4 Screenshot
+### Step 5: Install and configure Nessus
 
-Step 5: Save Scan Results
+Install Nessus on the system and complete the required initial setup. After installation, open the Nessus web interface and prepare it for vulnerability scanning.
 
-The Nmap results were saved using:
+![Step 5 Screenshot](images/step_5.jpeg)
 
-nmap -sV -oN nmap_scan_results.txt 192.168.64.6
-The file was verified using:
+### Step 6: Scan the target and review the vulnerabilities
 
-cat nmap_scan_results.txt
-Step 5 Screenshot
+Configure Nessus to scan the Metasploitable target and review the scan results after completion. The dashboard displays the vulnerabilities detected on the target along with their severity levels.
 
-Step 6: Create Nessus Scan
+![Step 6 Screenshot](images/step_6.png)
 
-Nessus Essentials was opened and Basic Network Scan was selected.
+## Result
 
-Step 6 Screenshot
-
-Step 7: Configure & Launch Scan
-
-A scan named Metasploitable 2 Vulnerability Scan was created with target: 192.168.64.6.
-
-The scan was launched and completed successfully.
-
-Step 7 Screenshot
-
-Step 8: Review Vulnerabilities
-
-Nessus identified vulnerabilities categorized as Critical, High, Medium, Low and Informational.
-
-Step 8 Screenshot
-
-Step 9: Document Key Finding
-
-One critical finding was examined:
-
-Vulnerability: UnrealIRCd Backdoor Detection
-CVE: CVE-2010-2075
-Port: 6667/tcp
-Host: 192.168.64.6
-Solution: Re-download, verify and reinstall the software.
-Step 9 Screenshot
+The experiment was successfully performed using Nmap and Nessus. Nmap was used to identify the open ports and services on the Metasploitable target, while Nessus was used to assess the target for known vulnerabilities and display the detected security issues.
