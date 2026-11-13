@@ -1,65 +1,69 @@
-# Sniffing and Session Hijacking
+# Experiment 5: ARP Spoofing and HTTP Traffic Analysis
 
-## COM 512 – Offensive and Defensive Security Lab
+## Objective
 
-## 1. Aim
-To capture and analyze network traffic using Wireshark and understand ARP spoofing and session hijacking, their impact, and prevention techniques.
+To study ARP spoofing in an isolated virtual lab and observe HTTP traffic exchanged with DVWA.
 
-## 2. Tools Required
-- **Wireshark:** For capturing and analyzing network packets.
-- **Computer:** For performing the practical.
-- **Test Network:** An authorized lab network or isolated virtual environment.
+## Procedure
 
-## 3. Procedure
+### Step 1: Check the Kali Network
 
-### Step 1: Open Wireshark
-Open Wireshark and select the network interface used for the lab.
+On Kali Linux, use `ip a` to confirm that the `eth0` interface is up and has the expected lab address.
 
-**Screenshot 1:** Wireshark main window showing available network interfaces.
+# Command: 
+```bash
+ip a
+```
 
+![Step 1 Screenshot](images/ss1.png)
 
-### Step 2: Start Packet Capture
-Start capturing network traffic on the selected interface and generate some normal network activity.
+### Step 2: Check the Metasploitable Network
 
-**Screenshot 2:** Wireshark capturing network packets.
+Use `ip a` to identify the Metasploitable IP address and ping the gateway to check basic connectivity.
 
+# Commands: 
+```bash
+ip a
+ping -c 2 192.168.122.129
+```
 
-### Step 3: Analyze Network Packets
-Observe captured packets and identify protocols such as ARP, TCP, and HTTP, where present. Use Wireshark display filters to find specific packets.
+![Step 2 Screenshot](images/ss2.png)
 
-**Screenshot 3:** Captured packets with protocol information.
+### Step 3: Send False Gateway Information to the Victim
 
+Enable packet forwarding on Kali Linux, then run the ARP spoofing command. It sends ARP replies to the target, claiming that the gateway is at Kali's MAC address.
 
-### Step 4: Study ARP Traffic
-Apply the `arp` display filter to observe ARP requests and replies. Study how IP addresses are associated with MAC addresses.
+# Commands: 
+```bash
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo arpspoof -i eth0 -t 192.168.122.128 192.168.122.129
+```
 
-**Screenshot 4:** ARP packets displayed in Wireshark.
+![Step 3 Screenshot](images/ss3.png)
 
+### Step 4: Send False Victim Information to the Gateway
 
-### Step 5: Understand ARP Spoofing
-In an authorized lab environment, study how forged ARP messages can associate a device's IP address with an incorrect MAC address and potentially redirect network traffic.
+In a second Kali terminal, run the reverse ARP spoofing command. This sends replies to the gateway, claiming that Metasploitable is at Kali's MAC address.
 
-**Screenshot 5:** Evidence of ARP traffic or the controlled lab demonstration.
+# Command: 
+```bash
+sudo arpspoof -i eth0 -t 192.168.122.129 192.168.122.128
+```
 
+![Step 4 Screenshot](images/ss4.png)
 
+### Step 5: Open a Browser and Log In to DVWA
 
-### Step 6: Understand Session Hijacking
-Study how an attacker may misuse a stolen or exposed session token to impersonate a user. Use a test application and test accounts in the authorized lab to understand the impact.
+Open the DVWA web interface at `http://192.168.122.128/dvwa` and sign in using the lab account credentials.
 
-**Screenshot 6:** Relevant packet analysis or the controlled session-security demonstration.
+![Step 5 Screenshot](images/ss5.png)
 
+### Step 6: Inspect the HTTP Packets
 
+In Wireshark, apply the display filter `http` to find and inspect the captured web traffic exchanged between Kali Linux and Metasploitable.
 
-### Step 7: Analyze and Apply Prevention Methods
-Review the captured traffic and identify security measures, including HTTPS/TLS, secure session cookies, session expiration, network monitoring, and ARP spoofing protection.
+![Step 6 Screenshot](images/ss6.png)
 
-**Screenshot 7:** Wireshark analysis showing the relevant packets or security observations.
+## Result
 
-
-
-## 4. Result
-Successfully studied network packet capture and analysis using Wireshark. Understood the concepts of ARP spoofing and session hijacking, their potential impact, and methods to reduce these risks.
-
-## 5. Conclusion
-This experiment helped us understand how network traffic can be monitored and how weaknesses in network communication and session management can be exploited. We learned the importance of encryption, secure session handling, and network monitoring in improving cybersecurity.
-
+The outputs document successful lab connectivity, Kali interface configuration, ARP spoofing, an authenticated DVWA page, and HTTP packets exchanged between Kali Linux and Metasploitable.
