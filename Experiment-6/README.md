@@ -1,54 +1,66 @@
-# Experiment 6: Website Security Assessment Using OWASP ZAP
+# Experiment 6: Website Risk Assessment using OWASP ZAP
 
-## Aim
-To perform a website security assessment using OWASP ZAP and identify potential vulnerabilities in a web application.
+## Objective
 
-## Requirements
-- Windows/Linux operating system
-- OWASP ZAP tool
-- Internet connection
-- OWASP Juice Shop or another authorized test website
+To scan a sample web application using OWASP ZAP and identify potential security vulnerabilities based on the OWASP Top 10 checklist.
 
 ## Procedure
 
-### Step 1: Launch OWASP ZAP
-Open the OWASP ZAP application on your system. Select the Quick Start option to begin the website security assessment.
+### Step 1: Configure the Network and Identify IP Addresses
 
-**Screenshot 1: OWASP ZAP Dashboard**
+Start Kali Linux and Metasploitable 2 virtual machines on the same network. Use `ip a` on Kali Linux and `ifconfig` on Metasploitable to identify their network interfaces and IP addresses.
 
+# Commands:
+```bash
+# Kali Linux
+ip a
 
+# Metasploitable
+ifconfig
+```
 
-### Step 2: Enter Target URL
-Select Automated Scan and enter the URL of the target web application in the URL field.
+![Step 1 Screenshot](images/ss1.1.png)
+![Step 1 Screenshot](images/ss1.2.png)
 
-**Screenshot 2: Target URL Configuration**
+### Step 2: Test Network Connectivity
 
+From Kali Linux, ping the Metasploitable IP address to verify that the target machine is reachable.
 
-### Step 3: Start Website Scanning
-Click on the Attack button to start the scanning process. OWASP ZAP begins crawling the website and checking its pages.
+# Command:
+```bash
+ping 192.168.122.129 -c 4
+```
 
-**Screenshot 3: Website Scanning Process**
+![Step 2 Screenshot](images/ss2.png)
 
+### Step 3: Access DVWA and Configure Its Security Level
 
-### Step 4: Perform Vulnerability Assessment
-Allow the scan to complete. OWASP ZAP analyzes the website's requests and responses to detect possible security weaknesses.
+Open the web browser in Kali Linux and access the Damn Vulnerable Web Application (DVWA) hosted on Metasploitable. Log in using the lab credentials, navigate to **DVWA Security**, and set the security level to **Low**.
 
-**Screenshot 4: Scanning Progress**
+Target URL: `http://192.168.122.129/dvwa/`
 
+![Step 3 Screenshot](images/ss3.png)
 
-### Step 5: Analyze Security Alerts
-Open the Alerts tab to view the detected vulnerabilities. Examine their risk levels, descriptions, and affected URLs.
+### Step 4: Launch the OWASP ZAP Automated Scan
 
-**Screenshot 5: Security Alerts**
+Launch OWASP ZAP and select **Automated Scan** from the Quick Start page. Enter the DVWA URL in the target field and click **Attack** to begin scanning the web application.
 
+Target URL: `http://192.168.122.129/dvwa/`
 
-### Step 6: Generate Scan Report
-Review the identified security issues and their recommended solutions. Generate and save the scan report for documentation.
+![Step 4 Screenshot](images/ss4.png)
 
-**Screenshot 6: Scan Report**
+### Step 5: Identify the Detected Vulnerabilities
+
+After the scan generates findings, open the **Alerts** tab in OWASP ZAP. Examine the detected vulnerabilities and their risk levels to understand the potential security weaknesses in the application.
+
+![Step 5 Screenshot](images/ss5.png)
+
+### Step 6: Examine Vulnerability Details and Generate the Report
+
+Select a detected vulnerability in OWASP ZAP to inspect its description, evidence, and potential impact. Use the reporting feature to generate an HTML report or another available report format documenting the scan results.
+
+![Step 6 Screenshot](images/ss6.png)
 
 ## Result
-The website security assessment was performed using OWASP ZAP, and the scan results were analyzed to identify potential security vulnerabilities.
 
-## Conclusion
-OWASP ZAP helps identify security weaknesses in web applications and provides useful information to improve their security.
+The experiment demonstrated automated website vulnerability assessment using OWASP ZAP. Potential security vulnerabilities in DVWA were identified, examined, and documented in a scanning report.
