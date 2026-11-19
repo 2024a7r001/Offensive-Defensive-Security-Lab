@@ -18,6 +18,8 @@ To understand how phishing campaigns are designed and executed using Gophish by 
 
 Download and install Gophish on the lab machine. Launch the Gophish server and open the admin console at `https://127.0.0.1:3333`. Log in to access the dashboard.
 
+![Screenshot 1](images/ss1.jpeg)
+
 ### Step 2: Configure Sending Profile
 
 Open the Sending Profiles section and create a new profile. Configure it to use the lab's SMTP relay so that simulated emails are delivered only to test accounts within the isolated network.
@@ -52,5 +54,3 @@ The Gophish phishing simulation campaign was configured and executed in a contro
 The experiment demonstrated how Gophish is used to design and conduct phishing simulations in a controlled environment. It helped understand the role of sending profiles, email templates, landing pages and campaign results. The experiment also highlighted the importance of phishing awareness, cautious link handling and regular security training to protect organizations against phishing attacks.
 
 ---
-
-**Note:** This experiment was performed for educational purposes in an isolated lab environment using consenting test accounts only.
