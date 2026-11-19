@@ -24,37 +24,37 @@ Download and install Gophish on the lab machine. Launch the Gophish server and o
 
 Open the Sending Profiles section and create a new profile. Configure it to use the lab's SMTP relay so that simulated emails are delivered only to test accounts within the isolated network.
 
-![Screenshot 1](images/ss2.jpeg)
+![Screenshot 2](images/ss2.jpeg)
 
 ### Step 3: Create Email Template
 
 Navigate to Email Templates and create a sample phishing email using a password-reset or IT-support notification. Add a suitable subject and message to simulate a realistic phishing email.
 
-![Screenshot 1](images/ss3.jpeg)
+![Screenshot 3](images/ss3.jpeg)
 
 ### Step 4: Create Landing Page
 
 Open the Landing Pages section and create a sample login-style page. Configure it to record simulated interactions only. Do not collect or store real passwords or credentials.
 
-![Screenshot 1](images/ss4.jpeg)
+![Screenshot 4](images/ss4.jpeg)
 
 ### Step 5: Create Test Recipient Group
 
 Navigate to the Users & Groups section and create a group containing consenting, lab-created test email addresses. Save the group for the campaign.
 
-![Screenshot 1](images/ss5.jpeg)
+![Screenshot 5](images/ss5.jpeg)
 
 ### Step 6: Launch Phishing Simulation Campaign
 
 Open the Campaigns section and create a new campaign. Select the email template, landing page, sending profile and test recipient group. Launch the campaign within the controlled lab environment.
 
-![Screenshot 1](images/ss6.jpeg)
+![Screenshot 6](images/ss6.jpeg)
 
 ### Step 7: Monitor and Analyze Results
 
 Open the Results dashboard and observe email opens, link clicks and simulated submission events. Analyze the results to understand user awareness and identify areas requiring further security training.
 
-![Screenshot 1](images/ss7.jpeg)
+![Screenshot 7](images/ss7.jpeg)
 
 ## 4. Results
 
